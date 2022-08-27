@@ -17,10 +17,10 @@ type AppDbContext(options: DbContextOptions<AppDbContext>) =
         with get() = this.companies
         and set v = this.companies <- v
 
-    [<DefaultValue>] val mutable adis : DbSet<Person>
+    [<DefaultValue>] val mutable person : DbSet<Person>
     member this.Person
-        with get() = this.adis
-        and set v = this.adis <- v
+        with get() = this.person
+        and set v = this.person <- v
 
     override _.OnModelCreating builder =
         builder.RegisterOptionTypes() // enables option values for all entities
@@ -28,5 +28,5 @@ type AppDbContext(options: DbContextOptions<AppDbContext>) =
 type TestDbContextFactory() =
     member this.CreateDbContext() =
         let options = new DbContextOptionsBuilder<AppDbContext>()
-        options.UseNpgsql($"connectionStringHere").UseFSharpTypes() |> ignore
+        options.UseNpgsql("connectionStringHere").UseFSharpTypes() |> ignore
         new AppDbContext(options.Options)
