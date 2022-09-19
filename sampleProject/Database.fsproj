@@ -14,8 +14,8 @@
 
   <ItemGroup>
     <PackageReference Include="EntityFrameworkCore.FSharp" Version="6.0.7" />
-    <PackageReference Include="linq2db" Version="4.1.1" />
-    <PackageReference Include="linq2db.EntityFrameworkCore" Version="6.8.0" />
+    <PackageReference Include="linq2db" Version="4.2.0" />
+    <PackageReference Include="linq2db.EntityFrameworkCore" Version="6.9.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
   </ItemGroup>
 
